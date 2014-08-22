@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Hemo.Compiler;
-using Hemo.Keywords;
+using Hemo.Keyword;
+using Hemo.Token;
 
 namespace Hemo {
 	namespace Compiler {
@@ -18,17 +19,19 @@ namespace Hemo {
 		}
 	}
 
-	#region Tokens
-	internal abstract class Token {}
-	internal abstract class Identifier : Token {}
-	internal abstract class Keyword : Token {}
-	internal abstract class IntegerLiteral : Token {}
-	internal abstract class RealLiteral : Token {}
-	internal abstract class CharacterLiteral : Token {}
-	internal abstract class StringLiteral : Token {}
-	internal abstract class Operator : Token {}
-	internal abstract class Punctuator : Token {}
-	#endregion
+	namespace Token {
+		#region Tokens
+		internal abstract class Token {}
+		internal abstract class Identifier : Token {}
+		internal abstract class Keyword : Token {}
+		internal abstract class IntegerLiteral : Token {}
+		internal abstract class RealLiteral : Token {}
+		internal abstract class CharacterLiteral : Token {}
+		internal abstract class StringLiteral : Token {}
+		internal abstract class Operator : Token {}
+		internal abstract class Punctuator : Token {}
+		#endregion
+	}
 	#region Punctuation
 	internal class LeftParenthesis : Punctuator {
 		public new static readonly String Value = "(";
@@ -64,7 +67,7 @@ namespace Hemo {
 		private static readonly Lazy<Dictionary<String, Type>> tokens = new Lazy<Dictionary<String, Type>>(GetTokens);
 		private static Dictionary<String, Type> GetTokens() {
 			var tokens = new Dictionary<String, Type>();
-			var tokenTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => !x.IsAbstract && typeof (Token).IsAssignableFrom(x));
+			var tokenTypes = Assembly.GetExecutingAssembly().GetTypes().Where(x => !x.IsAbstract && typeof (Token.Token).IsAssignableFrom(x));
 			foreach (Type tokenType in tokenTypes) {
 				var field = tokenType.GetField("Value", BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy);
 				var name = field.IfNotNull(x => x.GetValue(null)) as String ?? tokenType.Name.ToLower();

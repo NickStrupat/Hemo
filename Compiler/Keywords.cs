@@ -1,13 +1,13 @@
-﻿namespace Hemo.Keywords {
+﻿namespace Hemo.Keyword {
 	#region Type definitions
-	internal abstract class TypeDefinition : Keyword { }
+	internal abstract class TypeDefinition : Token.Keyword { }
 	internal class Class : TypeDefinition { }
 	internal class Interface : TypeDefinition { }
 	internal class Enum : TypeDefinition { }
 	internal class Delegate : TypeDefinition { }
 	#endregion
 	#region Modifiers
-	internal abstract class Modifier : Keyword { }
+	internal abstract class Modifier : Token.Keyword { }
 	#region Access modifiers
 	internal abstract class AccessModifier : Modifier { }
 	internal class Public : AccessModifier { }
@@ -25,16 +25,16 @@
 	internal class Virtual : Modifier { }
 	#endregion
 	#region Method parameters
-	internal abstract class MethodParameter : Keyword { }
+	internal abstract class MethodParameter : Token.Keyword { }
 	internal class Params : MethodParameter { }
 	internal class Out : MethodParameter { }
 	#endregion
 	#region Namespace
-	internal class Namespace : Keyword {}
-	internal class Using : Keyword {}
+	internal class Namespace : Token.Keyword {}
+	internal class Using : Token.Keyword {}
 	#endregion
-	#region Statement keywords
-	internal abstract class Statement : Keyword {}
+	#region Statement Token.Keywords
+	internal abstract class Statement : Token.Keyword {}
 	#region Selection statements
 	internal abstract class Selection : Statement { }
 	internal class If : Selection { }
@@ -44,9 +44,9 @@
 	#endregion
 	#region Iteration statements
 	internal abstract class Iteration : Statement { }
-	internal class For : Keyword { }
-	internal class In : Keyword { }
-	internal class While : Keyword { }
+	internal class For : Token.Keyword { }
+	internal class In : Token.Keyword { }
+	internal class While : Token.Keyword { }
 	#endregion
 	#region Jump statements
 	internal abstract class Jump : Statement { }
@@ -59,7 +59,7 @@
 	#endregion
 	#endregion
 
-	internal class Let : Keyword { }
-	internal class Var : Keyword { }
-	internal class New : Keyword { }
+	internal class Let : Token.Keyword { }
+	internal class Var : Token.Keyword { }
+	internal class New : Token.Keyword { }
 }
