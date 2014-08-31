@@ -34,10 +34,13 @@ namespace Hemo {
 	}
 	#region Punctuation
 	internal class LeftParenthesis : Punctuator {
-		public new static readonly String Value = "(";
+		public const String Value = "(";
 	}
 	internal class RightParenthesis : Punctuator {
-		public new static readonly String Value = ")";
+		public const String Value = ")";
+	}
+	internal class Interrogation : Punctuator {
+		public const String Value = "?";
 	}
 	#endregion
 

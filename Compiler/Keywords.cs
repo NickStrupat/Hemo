@@ -23,6 +23,8 @@
 	internal class Sealed : Modifier { }
 	internal class Static : Modifier { }
 	internal class Virtual : Modifier { }
+	internal class Constructor : Modifier { }
+	internal class Destructor : Modifier { }
 	#endregion
 	#region Method parameters
 	internal abstract class MethodParameter : Token.Keyword { }
@@ -32,6 +34,7 @@
 	#region Namespace
 	internal class Namespace : Token.Keyword {}
 	internal class Using : Token.Keyword {}
+	internal class Global : Token.Keyword {}
 	#endregion
 	#region Statement Token.Keywords
 	internal abstract class Statement : Token.Keyword {}
@@ -44,20 +47,52 @@
 	#endregion
 	#region Iteration statements
 	internal abstract class Iteration : Statement { }
-	internal class For : Token.Keyword { }
-	internal class In : Token.Keyword { }
-	internal class While : Token.Keyword { }
+	internal class For : Iteration { }
+	internal class In : Iteration { }
+	internal class While : Iteration { }
+	internal class Loop : Iteration {}
 	#endregion
 	#region Jump statements
 	internal abstract class Jump : Statement { }
 	internal class Return : Jump { }
 	internal class Continue : Jump { }
 	internal class Break : Jump { }
-	internal class Goto : Jump { }
 	internal class Yield : Jump { }
 	internal class Default : Jump { }
 	#endregion
+	#region Exception handling
+	internal abstract class ExceptionHandling : Statement {}
+	internal class Try : ExceptionHandling {}
+	internal class Catch : ExceptionHandling {}
 	#endregion
+	internal class Lock : Statement {}
+	internal class TryLock : Statement {}
+	#endregion
+	#region Operators
+	namespace Operator {
+		internal abstract class Operator : Token.Keyword {}
+		internal class As : Operator {}
+		internal class Await : Operator {}
+		internal class Is : Operator {}
+		internal class SizeOf : Operator {}
+		internal class TypeOf : Operator {}
+	}
+	#endregion
+	namespace Converion {
+		internal class Operator : Token.Keyword {}
+	}
+
+	namespace Access {
+		internal abstract class Access : Token.Keyword {}
+		internal class Base : Access {}
+		internal class This : Access {}
+	}
+
+	namespace Literal {
+		internal abstract class Literal : Token.Keyword {}
+		internal class True : Literal {}
+		internal class False : Literal {}
+	}
 
 	internal class Let : Token.Keyword { }
 	internal class Var : Token.Keyword { }

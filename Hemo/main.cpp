@@ -56,6 +56,11 @@ public:
 	}
 } program;
 
+class Foo {};
+class Bar : Foo {};
+class Baz : Foo {};
+class Derp : Foo {};
+
 int main() {
 	program.Main();
 	return 0;
