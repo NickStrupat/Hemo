@@ -63,14 +63,14 @@ class Derp : Foo {};
 
 int main() {
 	program.Main();
-	return 0;
+	//return 0;
 
 	Boolean isStupid = true;
 	cout << isStupid.ToString() << endl;
-	cout << static_cast<Object>(isStupid).ToString() << endl;
+	cout << static_cast<Object*>(&isStupid)->ToString() << endl;
 	cout << isStupid.GetHashCode() << endl;
-	String string = "what";
-	cout << string.Length() << endl;
+	StaticString string = "what";
+	cout << string << " " << string.Length() << endl;
 	//Console::WriteLine(isStupid);
 
 	Maybe<Boolean> maybe(Boolean(true));

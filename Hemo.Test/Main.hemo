@@ -4,6 +4,8 @@ namespace Hemo.Test {
 	public class Program {
 		public static void Main() {
 			let number = 42;
+			var variable = 32;
+			variable = 33;
 			for (var i in Int<0..10>.Range) {
 			}
 			Console.WriteLine("Hello world!");
