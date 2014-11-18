@@ -10,6 +10,7 @@ namespace System {
 		bool value;
 	public:
 		Boolean(bool const value);
+		operator bool() const;
 		String ToString() const;
 
 		static String const FalseString;

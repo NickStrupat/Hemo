@@ -11,6 +11,7 @@ namespace Hemo {
 	namespace Compiler {
 		internal class Program {
 			private static void Main(String[] args) {
+				ICollection<Int32> a;
 				var mainHemo = File.ReadAllText("../../../Hemo.Test/Main.hemo");
 				var tokens = mainHemo.Split(new Char[0], StringSplitOptions.RemoveEmptyEntries);
 				var asdf = Hemo.Tokens;

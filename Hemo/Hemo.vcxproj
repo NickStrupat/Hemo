@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
+    <ClCompile Include="Int32.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="SizeType.cpp" />
@@ -87,6 +88,10 @@
   <ItemGroup>
     <ClInclude Include="Boolean.hpp" />
     <ClInclude Include="Countable.hpp" />
+    <ClInclude Include="ICollection.hpp" />
+    <ClInclude Include="IEnumerable.hpp" />
+    <ClInclude Include="IEnumerator.hpp" />
+    <ClInclude Include="Int32.hpp" />
     <ClInclude Include="Maybe.hpp" />
     <ClInclude Include="Object.hpp" />
     <ClInclude Include="Reference.hpp" />

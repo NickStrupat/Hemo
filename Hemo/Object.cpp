@@ -6,9 +6,9 @@
 using namespace System;
 
 String Object::ToString() const {
-	return String(typeid(*this).name());
+	return String(L"System.Object"/*typeid(*this).name()*/);
 }
 
 SizeType Object::GetHashCode() const {
-	return typeid(*this).hash_code() ^ std::size_t(this) ^ Count();
+	return typeid(*this).hash_code() ^ std::size_t(this);
 }

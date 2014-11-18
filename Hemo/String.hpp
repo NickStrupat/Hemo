@@ -13,9 +13,9 @@ namespace System {
 	};
 
 	class StaticString : public StringBase {
-		char const * stringLiteral;
+		wchar_t const * stringLiteral;
 		std::size_t const length;
-		friend std::ostream & operator<<(std::ostream & os, StaticString const & staticString);
+		friend std::wostream & operator<<(std::wostream & os, StaticString const & staticString);
 	public:
 		template<std::size_t N>
 		StaticString(char const (&stringLiteral)[N]) : stringLiteral(stringLiteral), length(N - 1) {}
@@ -23,16 +23,16 @@ namespace System {
 	};
 
 	class String : public StringBase {
-		char const * stringLiteral;
+		wchar_t const * stringLiteral;
 		mutable std::size_t length = -1;
-		friend std::ostream & operator<<(std::ostream & os, String const & string);
+		friend std::wostream & operator<<(std::wostream & os, String const & string);
 	public:
 		String();
-		String(char const * stringLiteral);
+		String(wchar_t const * stringLiteral);
 		std::size_t Length() const;
 	};
 
-	std::ostream & operator<<(std::ostream & os, String const & string);
+	std::wostream & operator<<(std::wostream & os, String const & string);
 }
 
 #endif

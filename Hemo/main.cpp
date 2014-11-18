@@ -45,9 +45,11 @@ namespace System {
 
 #include "Boolean.hpp"
 #include "Maybe.hpp"
+#include "ICollection.hpp"
 
 using namespace std;
 using namespace System;
+using namespace System::Collections::Generic;
 
 class Program {
 public:
@@ -61,20 +63,32 @@ class Bar : Foo {};
 class Baz : Foo {};
 class Derp : Foo {};
 
+//#define FOREACH(T, current, enumerable) \
+//	IEnumerator<T> current_ = enumerable.GetEnumerator() \
+//	while (current_.MoveNext()) { \
+//	T current; \
+//	}
+
 int main() {
 	program.Main();
 	//return 0;
 
+	ICollection<Boolean> enumerable;
+	auto enumerator = enumerable.GetEnumerator();
+	for (int i; bool(enumerator.MoveNext()); i = enumerator.get_Current()) {
+
+	}
+
 	Boolean isStupid = true;
-	cout << isStupid.ToString() << endl;
-	cout << static_cast<Object*>(&isStupid)->ToString() << endl;
+	wcout << isStupid.ToString() << endl;
+	wcout << static_cast<Object*>(&isStupid)->ToString() << endl;
 	cout << isStupid.GetHashCode() << endl;
 	StaticString string = "what";
-	cout << string << " " << string.Length() << endl;
+	wcout << string << " " << string.Length() << endl;
 	//Console::WriteLine(isStupid);
 
 	Maybe<Boolean> maybe(Boolean(true));
-	cout << maybe.HasValue().ToString() << endl;
+	wcout << maybe.HasValue().ToString() << endl;
 	Maybe<Boolean> maybeNot;
-	cout << maybeNot.HasValue().ToString() << endl;
+	wcout << maybeNot.HasValue().ToString() << endl;
 }

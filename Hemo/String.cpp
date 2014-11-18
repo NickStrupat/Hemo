@@ -6,23 +6,23 @@ namespace System {
 		return length;
 	}
 
-	std::ostream & operator<<(std::ostream & os, StaticString const & staticString) {
+	std::wostream & operator<<(std::wostream & os, StaticString const & staticString) {
 		return os.write(staticString.stringLiteral, staticString.Length());
 	}
 
 	String::String() {}
 
-	String::String(char const * stringLiteral) {
+	String::String(wchar_t const * stringLiteral) {
 		this->stringLiteral = stringLiteral;
 	}
 
 	std::size_t String::Length() const {
 		if (length == -1)
-			length = std::strlen(stringLiteral);
+			length = std::wcslen(stringLiteral);
 		return length;
 	}
 
-	std::ostream & operator<<(std::ostream & os, String const & string) {
+	std::wostream & operator<<(std::wostream & os, String const & string) {
 		return os.write(string.stringLiteral, string.Length());
 	}
 }
