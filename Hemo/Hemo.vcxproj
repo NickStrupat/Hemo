@@ -87,13 +87,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boolean.hpp" />
+    <ClInclude Include="Collection.hpp" />
     <ClInclude Include="Countable.hpp" />
+    <ClInclude Include="Exception.hpp" />
     <ClInclude Include="ICollection.hpp" />
     <ClInclude Include="IEnumerable.hpp" />
     <ClInclude Include="IEnumerator.hpp" />
     <ClInclude Include="Int32.hpp" />
+    <ClInclude Include="Integer.hpp" />
     <ClInclude Include="Maybe.hpp" />
     <ClInclude Include="Object.hpp" />
+    <ClInclude Include="Owner.hpp" />
     <ClInclude Include="Reference.hpp" />
     <ClInclude Include="ReferenceCountable.hpp" />
     <ClInclude Include="SizeType.hpp" />

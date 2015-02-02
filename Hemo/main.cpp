@@ -73,8 +73,8 @@ int main() {
 	program.Main();
 	//return 0;
 
-	ICollection<Boolean> enumerable;
-	auto enumerator = enumerable.GetEnumerator();
+	Collection<Boolean> collection;
+	auto enumerator = collection.GetEnumerator();
 	for (int i; bool(enumerator.MoveNext()); i = enumerator.get_Current()) {
 
 	}

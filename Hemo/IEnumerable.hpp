@@ -10,7 +10,7 @@ namespace System {
 		namespace Generic {
 			template<typename T>
 			class IEnumerable {
-				static_assert(std::is_base_of<::System::Object, T>::value, "T must be a descendant of System::Object");
+				STATIC_ASSERT_IS_DESCENEDANT_OF_SYSTEM_OBJECT(T)
 			public:
 				virtual IEnumerator<T> GetEnumerator() = 0;
 			};

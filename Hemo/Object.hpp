@@ -6,6 +6,8 @@
 #include "Countable.hpp"
 #include "ReferenceCountable.hpp"
 
+#define STATIC_ASSERT_IS_DESCENEDANT_OF_SYSTEM_OBJECT(T) static_assert(std::is_base_of<::System::Object, T>::value, "T must be a descendant of System::Object");
+
 namespace System {
 	class String;
 	class SizeType;

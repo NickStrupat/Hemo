@@ -1,31 +1,21 @@
 #ifndef HEMO_SYSTEM_REFERENCE_HPP_INCLUDED
 #define HEMO_SYSTEM_REFERENCE_HPP_INCLUDED
 
+#include "Object.hpp"
+
 #include <cstddef>
 #include <atomic>
 #include <type_traits>
 
 namespace System {
 	template<typename T>
-	class Reference {
-		static_assert(std::is_base_of<Object, T>::value, "T does not inherit from System::Object");
-		T * const pointer;
-		T * const acquireReference(T * const pointer) {
-			while (lock.test_and_set(std::memory_order_acquire))  // acquire lock
-				;
-			pointer->lock
-		}
+	class Ref {
+		STATIC_ASSERT_IS_DESCENEDANT_OF_SYSTEM_OBJECT(T)
+		std::shared_ptr<T> pointer;
 	public:
-		explicit Reference(T * const pointer) : pointer(pointer) {
-			pointer->addReference();
-		}
-		Reference(Reference const & reference) {
-			++pointer->count;
-		}
-		~Reference() {
-			if (--pointer->count == 0)
-				delete pointer;
-		}
+		explicit Ref(T * const pointer) : pointer(pointer) {}
+		Ref(Ref const & ref) : pointer(ref.pointer) {}
+		T & Resolve() const { return *pointer; }
 	};
 }
 

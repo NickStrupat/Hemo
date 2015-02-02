@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,7 +12,8 @@ namespace Hemo {
 	namespace Compiler {
 		internal class Program {
 			private static void Main(String[] args) {
-				ICollection<Int32> a;
+				ICollection<Int32> a = new Collection<int>();
+				a.Remove(1);
 				var mainHemo = File.ReadAllText("../../../Hemo.Test/Main.hemo");
 				var tokens = mainHemo.Split(new Char[0], StringSplitOptions.RemoveEmptyEntries);
 				var asdf = Hemo.Tokens;

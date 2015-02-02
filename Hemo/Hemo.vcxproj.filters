@@ -80,5 +80,17 @@
     <ClInclude Include="Int32.hpp">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="Collection.hpp">
+      <Filter>Header Files\System\Collections\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Owner.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Integer.hpp">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
