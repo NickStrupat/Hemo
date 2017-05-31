@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <iostream>
+#include "Collection.hpp"
 
 namespace System {
 	/*class Boolean : public Object {
@@ -74,16 +75,16 @@ int main() {
 	//return 0;
 
 	Collection<Boolean> collection;
-	auto enumerator = collection.GetEnumerator();
-	for (int i; bool(enumerator.MoveNext()); i = enumerator.get_Current()) {
+	//auto enumerator = collection.GetEnumerator();
+	/*for (int i; bool(enumerator.MoveNext()); i = enumerator.get_Current()) {
 
-	}
+	}*/
 
-	Boolean isStupid = true;
+	Boolean isStupid = Boolean(true);
 	wcout << isStupid.ToString() << endl;
 	wcout << static_cast<Object*>(&isStupid)->ToString() << endl;
 	cout << isStupid.GetHashCode() << endl;
-	StaticString string = "what";
+	StaticString string = L"what";
 	wcout << string << " " << string.Length() << endl;
 	//Console::WriteLine(isStupid);
 

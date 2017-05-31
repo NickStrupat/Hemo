@@ -8,6 +8,8 @@
 
 namespace System {
 	class StringBase : public Object {
+	protected:
+		~StringBase() = default;
 	public:
 		virtual std::size_t Length() const = 0;
 	};
@@ -18,8 +20,8 @@ namespace System {
 		friend std::wostream & operator<<(std::wostream & os, StaticString const & staticString);
 	public:
 		template<std::size_t N>
-		StaticString(char const (&stringLiteral)[N]) : stringLiteral(stringLiteral), length(N - 1) {}
-		std::size_t Length() const;
+		StaticString(wchar_t const (&stringLiteral)[N]) : stringLiteral(stringLiteral), length(N - 1) {}
+		std::size_t Length() const override;
 	};
 
 	class String : public StringBase {
@@ -29,7 +31,7 @@ namespace System {
 	public:
 		String();
 		String(wchar_t const * stringLiteral);
-		std::size_t Length() const;
+		std::size_t Length() const override;
 	};
 
 	std::wostream & operator<<(std::wostream & os, String const & string);

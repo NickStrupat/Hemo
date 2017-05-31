@@ -3,7 +3,8 @@
 
 using namespace System;
 
-Boolean::Boolean(bool value) : value(value) {}
+Boolean::Boolean() : value(false) {}
+Boolean::Boolean(bool const value) : value(value) {}
 Boolean::operator bool() const { return value; }
 
 String const Boolean::TrueString(L"True");

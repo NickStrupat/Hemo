@@ -10,12 +10,12 @@
 namespace System {
 	class Exception : public Object {
 		String message;
-		Ref<Exception> innerException;
+		//Ref<Exception> innerException;
 	public:
-		Exception() {}
-		Exception(String message) : message(message), innerException() {}
-		Exception(String message, Ref<Exception> innerException)
-
+		/*Exception(): innerException(nullptr) {}
+		Exception(String message) : message(message), innerException(nullptr) {}
+		Exception(String message, Ref<Exception> innerException) : message(message), innerException(innerException) {}
+*/
 	};
 }
 

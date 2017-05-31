@@ -12,7 +12,8 @@ namespace System {
 			class IEnumerable {
 				STATIC_ASSERT_IS_DESCENEDANT_OF_SYSTEM_OBJECT(T)
 			public:
-				virtual IEnumerator<T> GetEnumerator() = 0;
+				virtual ~IEnumerable() = default;
+				//virtual IEnumerator<T> * GetEnumerator() = 0;
 			};
 		}
 	}

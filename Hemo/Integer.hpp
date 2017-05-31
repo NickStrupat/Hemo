@@ -11,7 +11,7 @@ namespace System {
 	class Integer : public Object {
 		T value;
 	public:
-		explicit Int32(T const value) : value(value) {}
+		explicit Integer(T const value) : value(value) {}
 		operator T() const { return value; }
 		String ToString() { return String(std::to_wstring(this->value).c_str()); }
 	};

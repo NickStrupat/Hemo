@@ -9,9 +9,10 @@ namespace System {
 	class Boolean : public Object {
 		bool value;
 	public:
-		Boolean(bool const value);
-		operator bool() const;
-		String ToString() const;
+		explicit Boolean();
+		explicit Boolean(bool const value);
+		explicit operator bool() const;
+		String ToString() const override;
 
 		static String const FalseString;
 		static String const TrueString;

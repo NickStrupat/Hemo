@@ -29,10 +29,11 @@
 	#region Method parameters
 	internal abstract class MethodParameter : Token.Keyword { }
 	internal class Params : MethodParameter { }
+	internal class Ref : MethodParameter { }
 	internal class Out : MethodParameter { }
-	#endregion
-	#region Namespace
-	internal class Namespace : Token.Keyword {}
+    #endregion
+    #region Namespace
+    internal class Namespace : Token.Keyword {}
 	internal class Using : Token.Keyword {}
 	internal class Global : Token.Keyword {}
 	#endregion
@@ -71,16 +72,14 @@
 	#region Operators
 	namespace Operator {
 		internal abstract class Operator : Token.Keyword {}
-		internal class As : Operator {}
-		internal class Await : Operator {}
+		internal class Conversion : Operator {}
+	    internal class As : Operator { }
+        internal class Await : Operator {}
 		internal class Is : Operator {}
 		internal class SizeOf : Operator {}
 		internal class TypeOf : Operator {}
 	}
 	#endregion
-	namespace Converion {
-		internal class Operator : Token.Keyword {}
-	}
 
 	namespace Access {
 		internal abstract class Access : Token.Keyword {}

@@ -9,6 +9,7 @@ namespace System {
 			template<typename T>
 			class IEnumerator {
 			public:
+				virtual ~IEnumerator() = default;
 				virtual T get_Current() = 0;
 				virtual Boolean MoveNext() = 0;
 				virtual void Reset() = 0;

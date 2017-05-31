@@ -9,7 +9,7 @@
 
 namespace System {
 	template<typename T>
-	class Ref {
+	class Ref : public Object {
 		STATIC_ASSERT_IS_DESCENEDANT_OF_SYSTEM_OBJECT(T)
 		std::shared_ptr<T> pointer;
 	public:

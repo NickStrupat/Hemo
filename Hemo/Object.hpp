@@ -13,6 +13,8 @@ namespace System {
 	class SizeType;
 
 	class Object {
+	protected:
+		~Object() = default;
 	public:
 		/*static Boolean ReferenceEquals(Object const & objectA, Object const & objectB);
 		Boolean Equals(Object const & object) const;*/

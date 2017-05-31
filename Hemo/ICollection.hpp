@@ -13,14 +13,14 @@ namespace System {
 			template<typename T>
 			class ICollection : public IEnumerable<T> {
 			public:
-				Int32 get_Count() const = 0;
-				Boolean get_IsReadOnly() const = 0;
+				virtual Int32 get_Count() const = 0;
+				virtual Boolean get_IsReadOnly() const = 0;
 
-				void Add(std::shared_ptr<T> item) = 0;
-				void Clear() = 0;
-				Boolean Contains(std::shared_ptr<T> item) const = 0;
-				//void CopyTo(Array<T> array, Int32 startingIndex) const = 0;
-				Boolean Remove(std::shared_ptr<T> item) = 0;
+				virtual void Add(std::shared_ptr<T> item) = 0;
+				virtual void Clear() = 0;
+				virtual Boolean Contains(std::shared_ptr<T> item) const = 0;
+				//virtual void CopyTo(Array<T> array, Int32 startingIndex) const = 0;
+				virtual Boolean Remove(std::shared_ptr<T> item) = 0;
 			};
 		}
 	}
