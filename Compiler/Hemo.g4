@@ -1,11 +1,11 @@
 grammar Hemo;
 
 byteOrderMark
-    : '\u00EF\u00BB\u00BF'
-    | '\u00FF\u00FF'
-    | '\u00FF\u00FE'
-    | '\u0000\u0000\u00FE\u00FF'
-    | '\u00FE\u00FF\u0000\u0000'
+    : '\u00EF\u00BB\u00BF'        // UTF-8
+    | '\u00FF\u00FF'              // UTF-16BE
+    | '\u00FF\u00FE'              // UTF-16LE
+    | '\u0000\u0000\u00FE\u00FF'  // UTF-32BE
+    | '\u00FE\u00FF\u0000\u0000'  // UTF-32LE
     ;
 
 compilationUnit
