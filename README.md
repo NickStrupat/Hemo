@@ -6,6 +6,7 @@ An adventure in programming language design and implementation
 ## Notes
 
 - use https://github.com/google/cityhash CityHash64() as hash function
+- see about making the hash function guarantee unique hashes of strings of same length up to a certain length; if achieved, comparing strings under that length can be done just with length and hash compare.
 - store run-time type info index in first 16 bits of references since current proccessors only use bottom 48 bits of 64-bit pointer types (this means a limit of 65,535 types per program which should be fine since the entire .NET BCL is something like 12,000 types)
 - store type info in a static array of pointers to the type info, grouped by inheritance hierarchies which are ordered
 - implement base-to-derived casting by storing the up and down hierarchy terminal distances in the 16 bits unused by the pointer (8 bits each), there you can test the validity of the cast by checking that the destination type index subtract the source type index is less than the "up" or "down" hierarchy terminal distance
