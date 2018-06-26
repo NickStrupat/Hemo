@@ -7,13 +7,14 @@ using System.Linq;
 using System.Reflection;
 using Antlr4.Runtime;
 using Hemo.Compiler;
-using Hemo.Keyword;
 using Hemo.Token;
 
 namespace Hemo {
 	namespace Compiler {
 		internal class Program {
 			private static void Main(String[] args) {
+                var keyword = new Keywords();
+
 			    var input = new AntlrInputStream(new StringReader(@"
 // ™This is an example of a single line comment using two slashes
 
@@ -146,11 +147,10 @@ public class FibCalculator extends Fibonacci implements Calculator {
 		}
 	}
 
-	internal class IfStatement : Statement {
-		public override List<Type> Tokens {
-			get { return tokens; }
-		}
-		private static readonly List<Type> tokens = new List<Type> { typeof (If), typeof (LeftParenthesis), typeof (BooleanExpression), typeof (RightParenthesis) };
+	internal class IfStatement : Statement
+	{
+	    public override List<Type> Tokens => default;
+		//private static readonly List<Type> tokens = new List<Type> { typeof (If), typeof (LeftParenthesis), typeof (BooleanExpression), typeof (RightParenthesis) };
 	}
 
 	internal static class Hemo {
