@@ -1,0 +1,7 @@
+BlockComment=1
+LineComment=2
+IntegerTypeSuffix=3
+DecimalIntegerLiteral=4
+DecimalNumeral=5
+WhitespaceElement=6
+Whitespace=7
